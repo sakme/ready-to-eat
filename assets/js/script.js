@@ -10,16 +10,13 @@ var filterIngredient = "filter.php?i=";
 // var filterEthnicity = "filter.php?a=";
 // var filterName = "search.php?s=";
 
-var clearStorage = function() {
-
-}
-
 var searchRecipe = function(output) {
     var searchOptionOutput = output;
-    localStorage.clear(searchArray);
 
     var item = searchText.value.trim();
+    console.log(searchOptionOutput);
     console.log(item);
+    console.log(kDrink + filterIngredient + item);
 
     if (searchOptionOutput === "food") {
 
@@ -28,25 +25,23 @@ var searchRecipe = function(output) {
                 if (response.ok) {
                     response.json().then(function(searchArray) {
                         localStorage.setItem("searchArray", JSON.stringify(searchArray));
-                        document.location.href = "search.html?term=" + item;
+                        document.location.href = "search.html?term=" + item + "&type=" + searchOptionOutput;
                     })
                 }
             });
     } else if (searchOptionOutput === "drink") {
 
-        fetch(kDrink + filterName + item)
+        fetch(kDrink + filterIngredient + item)
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function(searchArray) {
                         localStorage.setItem("searchArray", JSON.stringify(searchArray));
-                        location.href = "search.html?term=" + item;
+                        document.location.href = "search.html?term=" + item + "&type=" + searchOptionOutput;
                     })
                 }
             });
     }
 };
-
-clearStorage();
 
 form.addEventListener("submit", function(event) {
     var foodType = new FormData(form);
