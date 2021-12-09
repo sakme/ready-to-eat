@@ -14,7 +14,7 @@
         <H1>Ready to Eat</H1>
         <nav>
             <ul>
-                <li><a href=#search-X-UA-Compatible">Food</a></li>
+                <li><a href="#search-X-UA-Compatible">Food</a></li>
                 
                 <li><a href="#search-x-UA-Compatible">Drink</a></li>
                 
@@ -29,47 +29,47 @@
             <div class="search-X-UA-Compatible">
                 <h2> Find Your Favorite Recipe Here</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ea deserunt nisi, ab perferendis libero soluta laudantium illo maxime, animi autem delectus voluptatum necessitatibus dicta ratione eum exercitationem natus et!</p>
-                <input type="text" placeholder="search">
+                <div>
+                    <form id="searchForm">
+                        <input type="text" id="searchInput" placeholder="Search by ingredient">
+                        <button type="submit">Search</button>
+                        <input type="radio" id="foodSearchRadioInput" name="searchType" value="food" checked>
+                        <label for="foodSearchRadioInput">Food</label>
+                        <input type="radio" id="drinkSearchRadioInput" name="searchType" value="drink">
+                        <label for="drinkSearchRadioInput">Drinks</label>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <a id="heroImage">
             </div>
         </div>
     </section>
-    <section>
-       <div>
-           <h2>Breakfast</h2>
-           <img src="" alt="">
-           <img src="" alt="">
-           <img src="" alt="">         
+    <section id="categories">
+       <div id="breakfast">
+           <h2>Breakfast</h2>       
        </div>
 
-       <div>
-           <h2>Lunch</h2>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">  
+       <div id="starters">
+           <h2>Starters</h2>
         </div>
 
-       <div>
-           <h2>Dinner</h2>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">  
+       <div id="entrees">
+           <h2>Entrees</h2>
         </div>
 
-       <div>
+       <div id="desserts">
             <h2>Desserts</h2>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">  
        </div>
 
-       <div>
+       <div id="drinks">
             <h2>Drink</h2>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">  
        </div> 
        
     </section>
     <footer>Copyright 2021 Ready to Eat</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
