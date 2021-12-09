@@ -24,6 +24,9 @@ var entreeArray = [];
 var dessertArray = [];
 var drinkArray = [];
 
+// set referrer page in local storage
+localStorage.setItem("referrer", "index.html");
+
 // search handler
 var searchRecipe = function(output) {
     var searchOptionOutput = output;

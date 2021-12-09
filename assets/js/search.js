@@ -2,6 +2,9 @@ var headerSpanEl = document.querySelector("#term");
 var resultsDivEl = document.querySelector("#results");
 var searchArray = [];
 
+// set referrer page in local storage
+localStorage.setItem("referrer", "index.html");
+
 // display search results on search page
 var getSearchResults = function() {
 
@@ -14,15 +17,15 @@ var getSearchResults = function() {
 
     var term = search1.split("=")[1];
     var type = search2.split("=")[1];
-
-    headerSpanEl.textContent = term;
     
     // get search results from local storage
     searchArray = JSON.parse(localStorage.getItem("searchArray"));
 
     // check if food search and display results on page
-    if (type === "food") {
+    if (type === "food" && !searchArray.meals.length === null) {
         for (var i = 0; i < searchArray.meals.length; i++) {
+
+            headerSpanEl.textContent = term;
 
             var resultDivEl = document.createElement("div");
             resultDivEl.classList = "result_" + [i];
@@ -38,11 +41,15 @@ var getSearchResults = function() {
     
             resultsDivEl.appendChild(resultDivEl)
         }
+    } else {
+        headerSpanEl.textContent = "No Results Found";
     }
 
     // check if drink search and display results on page
-    if (type === "drink") {
+    if (type === "drink" && !searchArray.drinks.length === null) {
         for (var i = 0; i < searchArray.drinks.length; i++) {
+
+            headerSpanEl.textContent = term;
 
             var resultDivEl = document.createElement("div");
             resultDivEl.classList = "result_" + [i];
@@ -58,6 +65,8 @@ var getSearchResults = function() {
     
             resultsDivEl.appendChild(resultDivEl)
         }
+    } else {
+        headerSpanEl.textContent = "No Results Found";
     }
 
 };
