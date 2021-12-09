@@ -6,36 +6,46 @@ var searchFormEl = document.querySelector("#searchForm");
 var searchText = document.querySelector("#searchInput");
 var searchOption = document.querySelector("form");
 var filterIngredient = "filter.php?i=";
-// var filterCategory = "filter.php?c=";
-// var filterEthnicity = "filter.php?a=";
-// var filterName = "search.php?s=";
 
+// search handler
 var searchRecipe = function(output) {
     var searchOptionOutput = output;
 
+    // get search term from input
     var item = searchText.value.trim();
-    console.log(searchOptionOutput);
-    console.log(item);
-    console.log(kDrink + filterIngredient + item);
-
+    
+    // Check if food search
     if (searchOptionOutput === "food") {
 
+        // get search from food API
         fetch(kFood + filterIngredient + item)
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function(searchArray) {
+
+                        //save search results to local storage
                         localStorage.setItem("searchArray", JSON.stringify(searchArray));
+
+                        // redirect to search page
                         document.location.href = "search.html?term=" + item + "&type=" + searchOptionOutput;
                     })
                 }
             });
-    } else if (searchOptionOutput === "drink") {
+    }
+    
+    // check if drink search
+    if (searchOptionOutput === "drink") {
 
+        // get search from drinks API
         fetch(kDrink + filterIngredient + item)
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function(searchArray) {
+
+                        // save search results to local storage
                         localStorage.setItem("searchArray", JSON.stringify(searchArray));
+
+                        //redirect to search page
                         document.location.href = "search.html?term=" + item + "&type=" + searchOptionOutput;
                     })
                 }
@@ -43,6 +53,7 @@ var searchRecipe = function(output) {
     }
 };
 
+// search form event listener
 form.addEventListener("submit", function(event) {
     var foodType = new FormData(form);
     var output = "";

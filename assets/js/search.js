@@ -2,8 +2,13 @@ var headerSpanEl = document.querySelector("#term");
 var resultsDivEl = document.querySelector("#results");
 var searchArray = [];
 
+// display search results on search page
 var getSearchResults = function() {
+
+    // get url parameters and pass into variables
     var queryString = document.location.search;
+    localStorage.setItem("searchQueryString", JSON.stringify(queryString));
+
     var search1 = queryString.split("&")[0];
     var search2 = queryString.split("&")[1];
 
@@ -12,12 +17,10 @@ var getSearchResults = function() {
 
     headerSpanEl.textContent = term;
     
+    // get search results from local storage
     searchArray = JSON.parse(localStorage.getItem("searchArray"));
 
-    console.log(term);
-    console.log(type);
-    console.log(searchArray);
-
+    // check if food search and display results on page
     if (type === "food") {
         for (var i = 0; i < searchArray.meals.length; i++) {
 
@@ -37,6 +40,7 @@ var getSearchResults = function() {
         }
     }
 
+    // check if drink search and display results on page
     if (type === "drink") {
         for (var i = 0; i < searchArray.drinks.length; i++) {
 
@@ -59,5 +63,3 @@ var getSearchResults = function() {
 };
 
 getSearchResults();
-
-// resultsDivEl.addEventListener("click", selectItem);

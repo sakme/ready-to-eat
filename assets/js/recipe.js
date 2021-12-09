@@ -5,6 +5,8 @@ var mealIngredients = document.querySelector("#ingredients");
 var mealImage = document.querySelector("#image");
 var mealVideo = document.querySelector("#video");
 var mealInstructions = document.querySelector("#instructions");
+var backAnchor = document.querySelector("#back");
+var backQueryString = JSON.parse(localStorage.getItem("searchQueryString"));;
 var mealLookup = "lookup.php?i=";
 var queryString = document.location.search;
 var search1 = queryString.split("&")[0];
@@ -13,20 +15,27 @@ var id = search1.split("=")[1];
 var type = search2.split("=")[1];
 var meal = [];
 
+backAnchor.setAttribute("href", "search.html" + backQueryString)
 
+// get clicked recipe from API
 var getRecipe = function() {    
     
+    // check if food selected
     if (type === "food") {
-
         fetch(kFood + mealLookup + id)
             .then(function(response) {
                 if (response.ok) {
                     response.json().then(function(array) {
                         localStorage.setItem("meal", JSON.stringify(array));
                     })
+                } else {
+                    reload();
                 }
             });
-    } else if (type === "drink") {
+    }
+    
+    // check if drink selected
+    if (type === "drink") {
 
         fetch(kDrink + mealLookup + id)
             .then(function(response) {
@@ -34,20 +43,29 @@ var getRecipe = function() {
                     response.json().then(function(array) {
                         localStorage.setItem("meal", JSON.stringify(array));
                     })
+                } else {
+                    reload();
                 }
             });
     } 
     
+    // set delay to update local storage before displaying the recipe
     setTimeout(() => {
         displayRecipe();
     }, 500);
 };
 
+
+// display recipe on page
 var displayRecipe = function() {
 
+    // check if food selected
     if (type === "food") {
+
+        // retrieve array from local storage
         meal = JSON.parse(localStorage.getItem("meal"));
 
+        // create html elements
         mealName.textContent = meal.meals[0].strMeal;
         mealInstructions.textContent = meal.meals[0].strInstructions;
         mealImage.setAttribute("src", meal.meals[0].strMealThumb);
@@ -191,8 +209,13 @@ var displayRecipe = function() {
 
     }
 
+    // check if drink selected
     if (type === "drink") {
+
+        // retrieve array from local storage
         meal = JSON.parse(localStorage.getItem("meal"));mealName.textContent = meal.drinks[0].strDrink;
+
+        // create page elements
         mealInstructions.textContent = meal.drinks[0].strInstructions;
         mealImage.setAttribute("src", meal.drinks[0].strDrinkThumb);
         mealImage.setAttribute("width", "315");
