@@ -14,9 +14,14 @@ var search2 = queryString.split("&")[1];
 var id = search1.split("=")[1];
 var type = search2.split("=")[1];
 var meal = [];
-var referrer = meal = localStorage.getItem("referrer");
 
-backAnchor.setAttribute("href", referrer + backQueryString)
+var referrer = localStorage.getItem("referrer");
+
+if (!backQueryString) {
+    backAnchor.setAttribute("href", referrer);
+} else {
+    backAnchor.setAttribute("href", referrer + backQueryString);
+}
 
 // get clicked recipe from API
 var getRecipe = function() {    
