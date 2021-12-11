@@ -3,7 +3,7 @@ var resultsDivEl = document.querySelector("#results");
 var searchArray = [];
 
 // set referrer page in local storage
-localStorage.setItem("referrer", "index.html");
+localStorage.setItem("referrer", "search.html");
 
 // display search results on search page
 var getSearchResults = function() {
@@ -20,9 +20,9 @@ var getSearchResults = function() {
     
     // get search results from local storage
     searchArray = JSON.parse(localStorage.getItem("searchArray"));
-
-    // check if food search and display results on page
-    if (type === "food" && !searchArray.meals.length === null) {
+    
+    // check search type and display results on page
+    if (type === "food" && Array.isArray(searchArray.meals)) {
         for (var i = 0; i < searchArray.meals.length; i++) {
 
             headerSpanEl.textContent = term;
@@ -41,12 +41,7 @@ var getSearchResults = function() {
     
             resultsDivEl.appendChild(resultDivEl)
         }
-    } else {
-        headerSpanEl.textContent = "No Results Found";
-    }
-
-    // check if drink search and display results on page
-    if (type === "drink" && !searchArray.drinks.length === null) {
+    } else if (type === "drink" && Array.isArray(searchArray.drinks)) {
         for (var i = 0; i < searchArray.drinks.length; i++) {
 
             headerSpanEl.textContent = term;
