@@ -121,6 +121,8 @@ var categoryDisplay = function() {
                         breakfastImg.setAttribute("href", "recipe.html?id=" + breakfastArray.meals[i].idMeal + "&type=food");
                         breakfastImg.innerHTML = "<img src='" + breakfastArray.meals[i].strMealThumb + "' alt='image of " + breakfastArray.meals[i].strMeal + 
                             "' item='" + breakfastArray.meals[i].idMeal + "' width='200' height='200'>";
+
+                      
                         breakfastFigureEl.appendChild(breakfastImg);
 
                         var breakfastCardContentEL = document.createElement("div");  // div 2
@@ -141,6 +143,7 @@ var categoryDisplay = function() {
                         breakfastMediaContentEl.appendChild(breakfastPEl);
 
                         breakfastDivEl.appendChild(breakfastCardEl);  // add to section
+
                     }
                     
                 })
