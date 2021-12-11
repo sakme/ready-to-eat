@@ -90,11 +90,10 @@ var categoryDisplay = function() {
                 heroImgEl.setAttribute("href", "recipe.html?id=" + heroArray.meals[0].idMeal + "&type=food");
                 heroImgEl.innerHTML = "<img src='" + heroArray.meals[0].strMealThumb + "' alt='image of " + heroArray.meals[0].strMeal + 
                 "' item='" + heroArray.meals[0].idMeal + "' width='400' height='400'>";
-                
-            })
+                })
+            }
         }
-    }
-);
+    );
 
 
     // get breakfast items from API
@@ -107,11 +106,41 @@ var categoryDisplay = function() {
                     breakfastArray = searchArray;
 
                     for (i = 0; i < 3; i++) {
-                        var breakfastImg = document.createElement("a");
+                        var breakfastCardEl = document.createElement("div");  // main div
+                        breakfastCardEl.classList = "card";
+
+                        var breakfastCardImageEl = document.createElement("div");  // div 1
+                        breakfastCardImageEl.classList = "breakfastCardImageEl";
+                        breakfastCardEl.appendChild(breakfastCardImageEl);
+
+                        var breakfastFigureEl = document.createElement("figure");  // attach to div 1
+                        breakfastFigureEl.classList = "image is-4by3";
+                        breakfastCardImageEl.appendChild(breakfastFigureEl);
+                        
+                        var breakfastImg = document.createElement("a");  // attach to breakfastFigureEl
                         breakfastImg.setAttribute("href", "recipe.html?id=" + breakfastArray.meals[i].idMeal + "&type=food");
                         breakfastImg.innerHTML = "<img src='" + breakfastArray.meals[i].strMealThumb + "' alt='image of " + breakfastArray.meals[i].strMeal + 
                             "' item='" + breakfastArray.meals[i].idMeal + "' width='200' height='200'>";
-                        breakfastDivEl.appendChild(breakfastImg);
+                        breakfastFigureEl.appendChild(breakfastImg);
+
+                        var breakfastCardContentEL = document.createElement("div");  // div 2
+                        breakfastCardContentEL.classList  = "card-content";
+                        breakfastCardEl.appendChild(breakfastCardContentEL);
+
+                        var breakfastMediaEl = document.createElement("div");  // attach to breakfastCardContentEL
+                        breakfastMediaEl.classList = "media";
+                        breakfastCardContentEL.appendChild(breakfastMediaEl);
+
+                        var breakfastMediaContentEl = document.createElement("div");  //  attach to breakfastMediaEl
+                        breakfastMediaContentEl.classList  = "media-content";
+                        breakfastMediaEl.appendChild(breakfastMediaContentEl);
+
+                        var breakfastPEl = document.createElement("p");  // p element attach to breakfastMediaContentEl
+                        breakfastPEl.classList  = "title is-4";
+                        breakfastPEl.textContent = breakfastArray.meals[i].strMeal;
+                        breakfastMediaContentEl.appendChild(breakfastPEl);
+
+                        breakfastDivEl.appendChild(breakfastCardEl);  // add to section
                     }
                     
                 })
