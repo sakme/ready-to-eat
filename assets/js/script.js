@@ -90,11 +90,10 @@ var categoryDisplay = function() {
                 heroImgEl.setAttribute("href", "recipe.html?id=" + heroArray.meals[0].idMeal + "&type=food");
                 heroImgEl.innerHTML = "<img src='" + heroArray.meals[0].strMealThumb + "' alt='image of " + heroArray.meals[0].strMeal + 
                 "' item='" + heroArray.meals[0].idMeal + "' width='400' height='400'>";
-                
-            })
+                })
+            }
         }
-    }
-);
+    );
 
 
     // get breakfast items from API
@@ -107,11 +106,41 @@ var categoryDisplay = function() {
                     breakfastArray = searchArray;
 
                     for (i = 0; i < 3; i++) {
-                        var breakfastImg = document.createElement("a");
+                        var breakfastCardEl = document.createElement("div");  // main div
+                        breakfastCardEl.classList = "card";
+
+                        var breakfastCardImageEl = document.createElement("div");  // div 1
+                        breakfastCardImageEl.classList = "breakfastCardImageEl";
+                        breakfastCardEl.appendChild(breakfastCardImageEl);
+
+                        var breakfastFigureEl = document.createElement("figure");  // attach to div 1
+                        breakfastFigureEl.classList = "image is-4by3";
+                        breakfastCardImageEl.appendChild(breakfastFigureEl);
+                        
+                        var breakfastImg = document.createElement("a");  // attach to breakfastFigureEl
                         breakfastImg.setAttribute("href", "recipe.html?id=" + breakfastArray.meals[i].idMeal + "&type=food");
                         breakfastImg.innerHTML = "<img src='" + breakfastArray.meals[i].strMealThumb + "' alt='image of " + breakfastArray.meals[i].strMeal + 
                             "' item='" + breakfastArray.meals[i].idMeal + "' width='200' height='200'>";
-                        breakfastDivEl.appendChild(breakfastImg);
+                        breakfastFigureEl.appendChild(breakfastImg);
+
+                        var breakfastCardContentEL = document.createElement("div");  // div 2
+                        breakfastCardContentEL.classList  = "card-content";
+                        breakfastCardEl.appendChild(breakfastCardContentEL);
+
+                        var breakfastMediaEl = document.createElement("div");  // attach to breakfastCardContentEL
+                        breakfastMediaEl.classList = "media";
+                        breakfastCardContentEL.appendChild(breakfastMediaEl);
+
+                        var breakfastMediaContentEl = document.createElement("div");  //  attach to breakfastMediaEl
+                        breakfastMediaContentEl.classList  = "media-content";
+                        breakfastMediaEl.appendChild(breakfastMediaContentEl);
+
+                        var breakfastPEl = document.createElement("p");  // p element attach to breakfastMediaContentEl
+                        breakfastPEl.classList  = "title is-4";
+                        breakfastPEl.textContent = breakfastArray.meals[i].strMeal;
+                        breakfastMediaContentEl.appendChild(breakfastPEl);
+
+                        breakfastDivEl.appendChild(breakfastCardEl);  // add to section
                     }
                     
                 })
@@ -129,11 +158,41 @@ var categoryDisplay = function() {
                     starterArray = searchArray;
 
                     for (i = 0; i < 3; i++) {
+                        var starterCardEl = document.createElement("div");  // main div
+                        starterCardEl.classList = "card";
+
+                        var starterCardImageEl = document.createElement("div");  // div 1
+                        starterCardImageEl.classList = "starterCardImageEl";
+                        starterCardEl.appendChild(starterCardImageEl);
+
+                        var starterFigureEl = document.createElement("figure");  // attach to div 1
+                        starterFigureEl.classList = "image is-4by3";
+                        starterCardImageEl.appendChild(starterFigureEl);
+
                         var starterImg = document.createElement("a");
                         starterImg.setAttribute("href", "recipe.html?id=" + starterArray.meals[i].idMeal + "&type=food");
                         starterImg.innerHTML = "<img src='" + starterArray.meals[i].strMealThumb + "' alt='image of " + starterArray.meals[i].strMeal + 
                             "' item='" + starterArray.meals[i].idMeal + "' width='200' height='200'>";
-                        starterDivEl.appendChild(starterImg);
+                        starterFigureEl.appendChild(starterImg);
+
+                        var starterCardContentEL = document.createElement("div");  // div 2
+                        starterCardContentEL.classList  = "card-content";
+                        starterCardEl.appendChild(starterCardContentEL);
+
+                        var starterMediaEl = document.createElement("div");  // attach to starterCardContentEL
+                        starterMediaEl.classList = "media";
+                        starterCardContentEL.appendChild(starterMediaEl);
+
+                        var starterMediaContentEl = document.createElement("div");  //  attach to starterMediaEl
+                        starterMediaContentEl.classList  = "media-content";
+                        starterMediaEl.appendChild(starterMediaContentEl);
+
+                        var starterPEl = document.createElement("p");  // p element attach to starterMediaContentEl
+                        starterPEl.classList  = "title is-4";
+                        starterPEl.textContent = starterArray.meals[i].strMeal;
+                        starterMediaContentEl.appendChild(starterPEl);
+
+                        starterDivEl.appendChild(starterCardEl);  // add to section
                     }
                     
                 })
@@ -151,11 +210,41 @@ var categoryDisplay = function() {
                     entreeArray = searchArray;
 
                     for (i = 0; i < 3; i++) {
+                        var entreeCardEl = document.createElement("div");  // main div
+                        entreeCardEl.classList = "card";
+
+                        var entreeCardImageEl = document.createElement("div");  // div 1
+                        entreeCardImageEl.classList = "entreeCardImageEl";
+                        entreeCardEl.appendChild(entreeCardImageEl);
+
+                        var entreeFigureEl = document.createElement("figure");  // attach to div 1
+                        entreeFigureEl.classList = "image is-4by3";
+                        entreeCardImageEl.appendChild(entreeFigureEl);
+
                         var entreeImg = document.createElement("a");
                         entreeImg.setAttribute("href", "recipe.html?id=" + entreeArray.meals[i].idMeal + "&type=food");
                         entreeImg.innerHTML = "<img src='" + entreeArray.meals[i].strMealThumb + "' alt='image of " + entreeArray.meals[i].strMeal + 
                             "' item='" + entreeArray.meals[i].idMeal + "' width='200' height='200'>";
-                        entreeDivEl.appendChild(entreeImg);
+                        entreeFigureEl.appendChild(entreeImg);
+
+                        var entreeCardContentEL = document.createElement("div");  // div 2
+                        entreeCardContentEL.classList  = "card-content";
+                        entreeCardEl.appendChild(entreeCardContentEL);
+
+                        var entreeMediaEl = document.createElement("div");  // attach to entreeCardContentEL
+                        entreeMediaEl.classList = "media";
+                        entreeCardContentEL.appendChild(entreeMediaEl);
+
+                        var entreeMediaContentEl = document.createElement("div");  //  attach to entreeMediaEl
+                        entreeMediaContentEl.classList  = "media-content";
+                        entreeMediaEl.appendChild(entreeMediaContentEl);
+
+                        var entreePEl = document.createElement("p");  // p element attach to entreeMediaContentEl
+                        entreePEl.classList  = "title is-4";
+                        entreePEl.textContent = entreeArray.meals[i].strMeal;
+                        entreeMediaContentEl.appendChild(entreePEl);
+
+                        entreeDivEl.appendChild(entreeCardEl);  // add to section
                     }
                     
                 })
@@ -173,11 +262,41 @@ var categoryDisplay = function() {
                     dessertArray = searchArray;
 
                     for (i = 0; i < 3; i++) {
+                        var dessertCardEl = document.createElement("div");  // main div
+                        dessertCardEl.classList = "card";
+
+                        var dessertCardImageEl = document.createElement("div");  // div 1
+                        dessertCardImageEl.classList = "dessertCardImageEl";
+                        dessertCardEl.appendChild(dessertCardImageEl);
+
+                        var dessertFigureEl = document.createElement("figure");  // attach to div 1
+                        dessertFigureEl.classList = "image is-4by3";
+                        dessertCardImageEl.appendChild(dessertFigureEl);
+
                         var dessertImg = document.createElement("a");
                         dessertImg.setAttribute("href", "recipe.html?id=" + dessertArray.meals[i].idMeal + "&type=food");
                         dessertImg.innerHTML = "<img src='" + dessertArray.meals[i].strMealThumb + "' alt='image of " + dessertArray.meals[i].strMeal + 
                             "' item='" + dessertArray.meals[i].idMeal + "' width='200' height='200'>";
-                        dessertDivEl.appendChild(dessertImg);
+                        dessertFigureEl.appendChild(dessertImg);
+
+                        var dessertCardContentEL = document.createElement("div");  // div 2
+                        dessertCardContentEL.classList  = "card-content";
+                        dessertCardEl.appendChild(dessertCardContentEL);
+
+                        var dessertMediaEl = document.createElement("div");  // attach to dessertCardContentEL
+                        dessertMediaEl.classList = "media";
+                        dessertCardContentEL.appendChild(dessertMediaEl);
+
+                        var dessertMediaContentEl = document.createElement("div");  //  attach to dessertMediaEl
+                        dessertMediaContentEl.classList  = "media-content";
+                        dessertMediaEl.appendChild(dessertMediaContentEl);
+
+                        var dessertPEl = document.createElement("p");  // p element attach to dessertMediaContentEl
+                        dessertPEl.classList  = "title is-4";
+                        dessertPEl.textContent = dessertArray.meals[i].strMeal;
+                        dessertMediaContentEl.appendChild(dessertPEl);
+
+                        dessertDivEl.appendChild(dessertCardEl);  // add to section
                     }
                     
                 })
@@ -195,11 +314,41 @@ var categoryDisplay = function() {
                     drinkArray = searchArray;
 
                     for (i = 0; i < 3; i++) {
+                        var drinkCardEl = document.createElement("div");  // main div
+                        drinkCardEl.classList = "card";
+
+                        var drinkCardImageEl = document.createElement("div");  // div 1
+                        drinkCardImageEl.classList = "drinkCardImageEl";
+                        drinkCardEl.appendChild(drinkCardImageEl);
+
+                        var drinkFigureEl = document.createElement("figure");  // attach to div 1
+                        drinkFigureEl.classList = "image is-4by3";
+                        drinkCardImageEl.appendChild(drinkFigureEl);
+
                         var drinkImg = document.createElement("a");
                         drinkImg.setAttribute("href", "recipe.html?id=" + drinkArray.drinks[i].idDrink + "&type=drink");
                         drinkImg.innerHTML = "<img src='" + drinkArray.drinks[i].strDrinkThumb + "' alt='image of " + drinkArray.drinks[i].strDrink + 
                             "' item='" + drinkArray.drinks[i].idDrink + "' width='200' height='200'>";
-                        drinkDivEl.appendChild(drinkImg);
+                        drinkFigureEl.appendChild(drinkImg);
+
+                        var drinkCardContentEL = document.createElement("div");  // div 2
+                        drinkCardContentEL.classList  = "card-content";
+                        drinkCardEl.appendChild(drinkCardContentEL);
+
+                        var drinkMediaEl = document.createElement("div");  // attach to drinkCardContentEL
+                        drinkMediaEl.classList = "media";
+                        drinkCardContentEL.appendChild(drinkMediaEl);
+
+                        var drinkMediaContentEl = document.createElement("div");  //  attach to drinkMediaEl
+                        drinkMediaContentEl.classList  = "media-content";
+                        drinkMediaEl.appendChild(drinkMediaContentEl);
+
+                        var drinkPEl = document.createElement("p");  // p element attach to drinkMediaContentEl
+                        drinkPEl.classList  = "title is-4";
+                        drinkPEl.textContent = drinkArray.drinks[i].strDrink;
+                        drinkMediaContentEl.appendChild(drinkPEl);
+
+                        drinkDivEl.appendChild(drinkCardEl);  // add to section
                     }
                     
                 })
