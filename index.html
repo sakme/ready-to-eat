@@ -5,29 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Ready To Eat</title>
 </head>
 
 <body>
-    <Header>
-        
-        <H1>Ready to Eat</H1>
-        <nav>
-            <ul>
-                <li><a href="#search-X-UA-Compatible">Food</a></li>
-                
-                <li><a href="#search-x-UA-Compatible">Drink</a></li>
-                
-                <li><a href="#search-x-UA-Compatible">Meet the Chefs</a></li>
-                
-                <li><a href="search-x-UA-Compatible">Tips & Advice</a></li>                             
-            </ul>
+    <header id="header">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand navbar-start">
+                <h1 class="title nav-start m-4">Ready to Eat</h1>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+            </div>
+            <div class="navbar-menu m-4">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#breakfast-h2">Breakfast</a>
+                    <a class="navbar-item" href="#starters-h2">Starters</a>
+                    <a class="navbar-item" href="#entrees-h2">Entrees</a>
+                    <a class="navbar-item" href="#desserts-h2">Desserts</a>
+                    <a class="navbar-item" href="#drinks-h2">Drinks</a>
+                    <a class="navbar-item" href="meet-the-chefs.html">Meet the Chefs</a>
+                    <a class="navbar-item" href="tips.html">Tips & Advice</a>
+            </div>
+            </div>                             
         </nav>
-    </Header>
-    <section class="hero">
-        <div class="content">
+    </header>
+    <section id="hero" class="hero">
+        <div class="hero-body">
             <div class="search-X-UA-Compatible">
-                <h2> Find Your Favorite Recipe Here</h2>
+                <h2 class="title"> Find Your Favorite Recipe Here</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ea deserunt nisi, ab perferendis libero soluta laudantium illo maxime, animi autem delectus voluptatum necessitatibus dicta ratione eum exercitationem natus et!</p>
                 <div>
                     <form id="searchForm">
@@ -46,24 +55,25 @@
         </div>
     </section>
     <section id="categories">
-       <div id="breakfast">
-           <h2>Breakfast</h2>       
+        <h2 id="breakfast-h2"class="title m-3 has-text-centered ">Breakfast</h2>
+        <div id="breakfast" class="columns">
+             
        </div>
-
-       <div id="starters">
-           <h2>Starters</h2>
+       <h2 id="starters-h2"class="title m-3">Starters</h2>
+       <div id="starters" class="columns">
+           
         </div>
+        <h2 id="entrees-h2"class="title m-3">Entrees</h2>
+       <div id="entrees" class="columns">
 
-       <div id="entrees">
-           <h2>Entrees</h2>
         </div>
-
-       <div id="desserts">
-            <h2>Desserts</h2>
+        <h2 id="desserts-h2" class="title m-3">Desserts</h2>
+       <div id="desserts" class="columns">
+            
        </div>
-
-       <div id="drinks">
-            <h2>Drink</h2>
+        <h2 id="drinks-h2" class="title m-3">Drink</h2>
+       <div id="drinks" class="columns"> 
+            
        </div> 
        
     </section>
@@ -73,3 +83,4 @@
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
+

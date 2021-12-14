@@ -11,7 +11,8 @@ var starterDivEl = document.querySelector("#starters");
 var entreeDivEl = document.querySelector("#entrees");
 var dessertDivEl = document.querySelector("#desserts");
 var drinkDivEl = document.querySelector("#drinks");
-var heroImgEl = document.querySelector("#heroImage");
+var headerImgEl = document.querySelector("#header");
+var heroImgEl = document.querySelector("#hero");
 var filterIngredient = "filter.php?i=";
 var filterBreakfast = "filter.php?c=breakfast";
 var filterStarters = "filter.php?c=starter";
@@ -75,6 +76,7 @@ var searchRecipe = function(output) {
     }
 };
 
+
 var categoryDisplay = function() {
 
     //get hero item from API
@@ -85,11 +87,8 @@ var categoryDisplay = function() {
 
                 // save search results to local storage
                 heroArray = searchArray;
-                console.log(heroArray);
-
-                heroImgEl.setAttribute("href", "recipe.html?id=" + heroArray.meals[0].idMeal + "&type=food");
-                heroImgEl.innerHTML = "<img src='" + heroArray.meals[0].strMealThumb + "' alt='image of " + heroArray.meals[0].strMeal + 
-                "' item='" + heroArray.meals[0].idMeal + "' width='400' height='400'>";
+                headerImgEl.setAttribute("style", "background-image: url('" + heroArray.meals[0].strMealThumb + "'); background-size: cover; background-position: center; background-attachment: fixed; position: sticky; top: 0;");
+                heroImgEl.setAttribute("style", "background-image: url('" + heroArray.meals[0].strMealThumb + "'); background-size: cover; background-position: center; background-attachment: fixed;");
                 })
             }
         }
@@ -107,14 +106,14 @@ var categoryDisplay = function() {
 
                     for (i = 0; i < 3; i++) {
                         var breakfastCardEl = document.createElement("div");  // main div
-                        breakfastCardEl.classList = "card";
+                        breakfastCardEl.classList = "card column m-4";
 
                         var breakfastCardImageEl = document.createElement("div");  // div 1
                         breakfastCardImageEl.classList = "breakfastCardImageEl";
                         breakfastCardEl.appendChild(breakfastCardImageEl);
 
                         var breakfastFigureEl = document.createElement("figure");  // attach to div 1
-                        breakfastFigureEl.classList = "image is-4by3";
+                        breakfastFigureEl.classList = "image is-1by1";
                         breakfastCardImageEl.appendChild(breakfastFigureEl);
                         
                         var breakfastImg = document.createElement("a");  // attach to breakfastFigureEl
@@ -160,14 +159,14 @@ var categoryDisplay = function() {
 
                     for (i = 0; i < 3; i++) {
                         var starterCardEl = document.createElement("div");  // main div
-                        starterCardEl.classList = "card";
+                        starterCardEl.classList = "card column m-4";
 
                         var starterCardImageEl = document.createElement("div");  // div 1
                         starterCardImageEl.classList = "starterCardImageEl";
                         starterCardEl.appendChild(starterCardImageEl);
 
                         var starterFigureEl = document.createElement("figure");  // attach to div 1
-                        starterFigureEl.classList = "image is-4by3";
+                        starterFigureEl.classList = "image is-1by1";
                         starterCardImageEl.appendChild(starterFigureEl);
 
                         var starterImg = document.createElement("a");
@@ -212,14 +211,14 @@ var categoryDisplay = function() {
 
                     for (i = 0; i < 3; i++) {
                         var entreeCardEl = document.createElement("div");  // main div
-                        entreeCardEl.classList = "card";
+                        entreeCardEl.classList = "card column m-4";
 
                         var entreeCardImageEl = document.createElement("div");  // div 1
                         entreeCardImageEl.classList = "entreeCardImageEl";
                         entreeCardEl.appendChild(entreeCardImageEl);
 
                         var entreeFigureEl = document.createElement("figure");  // attach to div 1
-                        entreeFigureEl.classList = "image is-4by3";
+                        entreeFigureEl.classList = "image is-1by1";
                         entreeCardImageEl.appendChild(entreeFigureEl);
 
                         var entreeImg = document.createElement("a");
@@ -264,14 +263,14 @@ var categoryDisplay = function() {
 
                     for (i = 0; i < 3; i++) {
                         var dessertCardEl = document.createElement("div");  // main div
-                        dessertCardEl.classList = "card";
+                        dessertCardEl.classList = "card column m-4";
 
                         var dessertCardImageEl = document.createElement("div");  // div 1
                         dessertCardImageEl.classList = "dessertCardImageEl";
                         dessertCardEl.appendChild(dessertCardImageEl);
 
                         var dessertFigureEl = document.createElement("figure");  // attach to div 1
-                        dessertFigureEl.classList = "image is-4by3";
+                        dessertFigureEl.classList = "image is-1by1";
                         dessertCardImageEl.appendChild(dessertFigureEl);
 
                         var dessertImg = document.createElement("a");
@@ -316,14 +315,14 @@ var categoryDisplay = function() {
 
                     for (i = 0; i < 3; i++) {
                         var drinkCardEl = document.createElement("div");  // main div
-                        drinkCardEl.classList = "card";
+                        drinkCardEl.classList = "card column m-4";
 
                         var drinkCardImageEl = document.createElement("div");  // div 1
                         drinkCardImageEl.classList = "drinkCardImageEl";
                         drinkCardEl.appendChild(drinkCardImageEl);
 
                         var drinkFigureEl = document.createElement("figure");  // attach to div 1
-                        drinkFigureEl.classList = "image is-4by3";
+                        drinkFigureEl.classList = "image is-1by1";
                         drinkCardImageEl.appendChild(drinkFigureEl);
 
                         var drinkImg = document.createElement("a");
