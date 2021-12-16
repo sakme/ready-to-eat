@@ -17,11 +17,11 @@ var meal = [];
 
 var referrer = localStorage.getItem("referrer");
 
-if (!backQueryString) {
-    backAnchor.setAttribute("href", referrer);
-} else {
-    backAnchor.setAttribute("href", referrer + backQueryString);
-}
+if (backQueryString) {
+    var backLiEl = document.createElement("li");
+    backLiEl.innerHTML = "<a href='" + referrer + backQueryString + "'>Search Results</a>";
+    backAnchor.appendChild(backLiEl);
+};
 
 // get clicked recipe from API
 var getRecipe = function() {    
@@ -73,10 +73,14 @@ var displayRecipe = function() {
 
         // create html elements
         mealName.textContent = meal.meals[0].strMeal;
-        mealInstructions.textContent = meal.meals[0].strInstructions;
+        var instructionStr = meal.meals[0].strInstructions
+        
+        mealInstructions.innerHTML = instructionStr.replace(/\r\n/g, "<br>");
+        mealInstructions.classList = "Subtitle m-4";
         mealImage.setAttribute("src", meal.meals[0].strMealThumb);
         mealImage.setAttribute("width", "315");
         mealImage.setAttribute("heigth", "315");
+        
     
         if (meal.meals[0].strYoutube) {
             var video = meal.meals[0].strYoutube;

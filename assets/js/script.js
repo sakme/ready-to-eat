@@ -27,6 +27,7 @@ var drinkArray = [];
 
 // set referrer page in local storage
 localStorage.setItem("referrer", "index.html");
+localStorage.setItem("searchQueryString", null);
 
 // search handler
 var searchRecipe = function(output) {
