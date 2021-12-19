@@ -16,6 +16,8 @@ Group recipe app.
 * You can search using our Search feature to find recipes with common ingredients. 
 * Visualize the results with high-quality photos of each recipe, clear instructions, and YouTube videos to make sure you prepare the recipes properly. 
 
+<img width="1433" alt="Screen Shot 2021-12-19 at 5 55 16 PM" src="https://user-images.githubusercontent.com/17090651/146693914-da97c09a-b390-4318-b059-b5f44ec296c8.png">
+
 # Technologies Used #
 * HTML, CSS, Bulma CSS Framework, JavaScript, Balsamiq, Github, VS Code
 
