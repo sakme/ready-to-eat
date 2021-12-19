@@ -10,7 +10,7 @@
 </head>
 
 <body class="has-navbar-fixed-top">
-    <header id="header">
+    <header id="header" style="z-index: 9999;">
         <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand navbar-start">
                 <h1 class="title nav-start m-4">Ready to Eat</h1>
@@ -33,52 +33,58 @@
             </div>                             
         </nav>
     </header>
-    <section id="hero" class="hero is-fullheight">
-        <div class="hero-body">
-            <div class="search-X-UA-Compatible">
-                <h2 class="title is-1" style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);"> Find Your Favorite Recipe Here</h2>
-                <p class="subtitle is-4" style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);">Find great recipes quickly and get dinner on the table in a hurry!</p>
-                <div>
-                    <form class="control" id="searchForm">
-                        <div class="field">
-                            <input class="input" type="text" id="searchInput" placeholder="Search by ingredient">
-                            <button type="submit" class="button field">Search</button>
-                            <input class="radio" type="radio" id="foodSearchRadioInput" name="searchType" value="food" checked>
-                            <label class="label" style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);" for="foodSearchRadioInput">Food</label>
-                            <input class="radio"  type="radio" id="drinkSearchRadioInput" name="searchType" value="drink">
-                            <label class="label" style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);" for="drinkSearchRadioInput">Drinks</label>
+    <main style="overflow: hidden;"> 
+        <section id="hero" class="hero is-fullheight" style="z-index: 1;">
+            <div class="hero-body">
+                <div class="search-X-UA-Compatible">
+                    <h2 class="title is-1" style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);"> Find Your Favorite Recipe Here</h2>
+                    <p class="subtitle is-4" style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);">Find great recipes quickly and get dinner on the table in a hurry!</p>
+                    <div>
+                        <form class="control" id="searchForm" style="z-index: 1;">
+                            <div class="field" style="display: inline-block flex; justify-content: flex-start; ">
+                                <input class="input" style="max-width: 50%;" type="text" id="searchInput" placeholder="Search by ingredient" >
+                                <button type="submit" class="button">Search</button>
+                            <div class="field" style="display: inline-block;">
+                                <input type="radio" id="foodSearchRadioInput" name="searchType" value="food" checked>
+                                <label style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);" for="foodSearchRadioInput">Food</label>
+                                <input type="radio" id="drinkSearchRadioInput" name="searchType" value="drink">
+                                <label style="color: white; text-shadow: 2px 2px rgba(0, 0, 0, 0.308);" for="drinkSearchRadioInput">Drinks</label>
+                            </div>
                         </div>
-                    </form>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <a id="heroImage"></a>
                 </div>
             </div>
-            <div>
-                <a id="heroImage"></a>
+        </section>
+        <section id="categories" style="z-index: 2;">
+            <h2 id="breakfast-h2"class="title m-3 has-text-centered ">Breakfast</h2>
+            <div id="breakfast" class="columns">
+                 
+           </div>
+           <h2 id="starters-h2"class="title m-3 has-text-centered">Starters</h2>
+           <div id="starters" class="columns">
+               
             </div>
-        </div>
-    </section>
-    <section id="categories">
-        <h2 id="breakfast-h2"class="title m-3 has-text-centered ">Breakfast</h2>
-        <div id="breakfast" class="columns">
-             
-       </div>
-       <h2 id="starters-h2"class="title m-3">Starters</h2>
-       <div id="starters" class="columns">
+            <h2 id="entrees-h2"class="title m-3 has-text-centered">Entrees</h2>
+           <div id="entrees" class="columns">
+    
+            </div>
+            <h2 id="desserts-h2" class="title m-3 has-text-centered">Desserts</h2>
+           <div id="desserts" class="columns">
+                
+           </div>
+            <h2 id="drinks-h2" class="title m-3 has-text-centered">Drink</h2>
+           <div id="drinks" class="columns"> 
+                
+           </div> 
            
-        </div>
-        <h2 id="entrees-h2"class="title m-3">Entrees</h2>
-       <div id="entrees" class="columns">
-
-        </div>
-        <h2 id="desserts-h2" class="title m-3">Desserts</h2>
-       <div id="desserts" class="columns">
-            
-       </div>
-        <h2 id="drinks-h2" class="title m-3">Drink</h2>
-       <div id="drinks" class="columns"> 
-            
-       </div> 
-       
-    </section>
+        </section>
+    </main>
+    
     <footer class="footer">Copyright 2021 Ready to Eat</footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
