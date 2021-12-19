@@ -88,7 +88,7 @@ var categoryDisplay = function() {
 
                 // save search results to local storage
                 heroArray = searchArray;
-                headerImgEl.setAttribute("style", "background-image: url('" + heroArray.meals[0].strMealThumb + "'); background-size: cover; background-position: center; background-attachment: fixed; position: sticky; top: 0;");
+                headerImgEl.setAttribute("style", "background-image: url('" + heroArray.meals[0].strMealThumb + "'); background-size: cover; background-position: center; background-attachment: fixed; top: 0;");
                 heroImgEl.setAttribute("style", "background-image: url('" + heroArray.meals[0].strMealThumb + "'); background-size: cover; background-position: center; background-attachment: fixed;");
                 })
             }
