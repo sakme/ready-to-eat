@@ -1,5 +1,4 @@
-# ready-to-eat
-Group recipe app. 
+## Ready to Eat README 
 
 ## Purpose ##
 
