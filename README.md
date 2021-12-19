@@ -1,10 +1,10 @@
-## Ready to Eat README 
+## Ready to Eat README ##
 
-## Purpose ##
+# Purpose #
 
 * Ready to Eat is a recipe app designed for busy people who want to eat good food quickly. 
 
-# Website Address
+# Website Address #
 * cleancodequeen.github.io/ready-to-eat
 
 # Features #
@@ -20,9 +20,9 @@
 # Technologies Used #
 * HTML, CSS, Bulma CSS Framework, JavaScript, Balsamiq, Github, VS Code
 
-# Contributions (Made with ❤️ by): 
+# Contributions (Made with ❤️ by): #
 * Alan - JavaScript and Search Page
-* Salipha - Recipe and Meet the Chefs Page
+* Salipha - Recipe
 * Shanen - CSS, Wireframe
 * Timi - Home, Tips & Advice Page
 
