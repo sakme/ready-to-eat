@@ -5,7 +5,7 @@
 * Ready to Eat is a recipe app designed for busy people who want to eat good food quickly. 
 
 # Website Address #
-* cleancodequeen.github.io/ready-to-eat
+* https://sakme.github.io/ready-to-eat
 
 # Features #
 * You can browse recipes and get recommendations for apps that you can cook right now. The app also features drinks that you can make as well. 
